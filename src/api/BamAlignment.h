@@ -332,7 +332,8 @@ inline bool BamAlignment::AddTag(const std::string& tag, const std::vector<T>& v
     memcpy(originalTagData.Buffer, TagData.c_str(), tagDataLength+1); // '+1' for TagData's null-term
 
     // write newTagBase (removes old null term)
-    strcat(originalTagData.Buffer + tagDataLength, (const char*)newTagBase);
+    //strcat(originalTagData.Buffer + tagDataLength, (const char*)newTagBase);
+    memcpy(originalTagData.Buffer + tagDataLength, newTagBase, Constants::BAM_TAG_ARRAYBASE_SIZE * sizeof(char));
 
     // add vector elements to tag
     int elementsBeginOffset = tagDataLength + Constants::BAM_TAG_ARRAYBASE_SIZE;
