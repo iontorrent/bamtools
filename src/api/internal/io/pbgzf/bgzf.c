@@ -56,7 +56,7 @@ packInt16(uint8_t* buffer, uint16_t value)
 	buffer[1] = value >> 8;
 }
 
-inline int 
+int
 unpackInt16(const uint8_t *buffer)
 {
 	return buffer[0] | buffer[1] << 8;
