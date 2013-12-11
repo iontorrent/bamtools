@@ -5,14 +5,14 @@
 # src/api/internal/io
 # ==========================
 
-set ( InternalIODir "${InternalDir}/io" )
+set( InternalIODir "${InternalDir}/io" )
 
 add_subdirectory( pbgzf )
 
 #--------------------------
 # platform-independent IO
 #--------------------------
-set ( CommonIOSources
+set( CommonIOSources
         ${InternalIODir}/BamDeviceFactory_p.cpp
         ${InternalIODir}/BamFile_p.cpp
         ${InternalIODir}/BamFtp_p.cpp
@@ -34,21 +34,17 @@ set ( CommonIOSources
 #------------------------
 # platform-dependent IO
 #------------------------
-if ( _WIN32 )
-    set ( PlatformIOSources
-            ${InternalIODir}/TcpSocketEngine_win_p.cpp
-    )
-else ( _WIN32 )
-    set ( PlatformIOSources
-            ${InternalIODir}/TcpSocketEngine_unix_p.cpp
-    )
-endif ( _WIN32 )
+if( WIN32 )
+    set( PlatformIOSources ${InternalIODir}/TcpSocketEngine_win_p.cpp )
+else()
+    set( PlatformIOSources ${InternalIODir}/TcpSocketEngine_unix_p.cpp )
+endif()
 
 #---------------------------
 # make build-specific list
 #---------------------------
-set ( InternalIOSources 
-        ${CommonIOSources} 
+set( InternalIOSources
+        ${CommonIOSources}
         ${PlatformIOSources} 
 		${InternalPBGZFSources}
 
