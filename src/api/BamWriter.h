@@ -16,7 +16,7 @@
 
 namespace BamTools {
 
-struct BamAlignment;
+class BamAlignment;
 struct SamHeader;
 
 //! \cond
