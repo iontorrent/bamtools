@@ -63,8 +63,8 @@ class BamWriterPrivate {
 
     // data members
     private:
-        BgzfStream *m_stream;
         bool m_isBigEndian;
+        BgzfStream *m_stream;
         std::string m_errorString;
         int32_t m_numThreads;
         int32_t m_writeCompressed;
