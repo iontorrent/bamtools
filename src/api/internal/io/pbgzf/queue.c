@@ -341,7 +341,7 @@ void
 queue_print_status(queue_t *q, FILE *fp)
 {
     fprintf(fp, "QUEUE STATUS\n");
-    fprintf(fp, "mem=%d head=%d tail=%d n=%d length=%d id=%lld ordered=%d num_adders=%d num_getters=%d\n",
+    fprintf(fp, "mem=%d head=%d tail=%d n=%d length=%d id=%ld ordered=%d num_adders=%d num_getters=%d\n",
             q->mem, q->head, q->tail, q->n, q->length, q->id, q->ordered, q->num_adders, q->num_getters);
 #ifdef QUEUE_DEBUG
     fprintf(fp, "num_waiting=[%d,%d,%d,%d]\n", 
