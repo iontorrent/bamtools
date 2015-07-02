@@ -54,6 +54,7 @@ class BgzfStream {
         // writes the supplied data into the BGZF buffer
         virtual size_t Write(const char* data, const size_t dataLength) = 0;
 
+        virtual ~BgzfStream() {}
 
     // static 'utility' methods
     public:
